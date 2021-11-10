@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="common/head.html"></head>
+<body>
+<header th:insert="common/header.html"></header>
+    <div class="container col-10">
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th class="text-center" scope="col">ID</th>
+                    <th class="text-center" scope="col">이름</th>
+
+                    <th class="text-center" scope="col">이메일</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="text-center" th:each="member : ${members}">
+                    <td th:text="${member.userid}"></td>
+                    <td th:text="${member.username}"></td>
+
+                    <td th:text="${member.mail}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div> <!-- /container -->
+<div th:insert="common/footer.html"></div>
+</body>
+</html>
